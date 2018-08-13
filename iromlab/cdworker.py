@@ -524,7 +524,7 @@ def cdWorker():
                 carrierData['PPN'] = jobList[1]
                 carrierData['title'] = jobList[2]
                 carrierData['volumeNo'] = jobList[3]
-                carrierData['carrierType'] = jobList[4]
+                #carrierData['carrierType'] = jobList[4]
 
                 # Process the carrier
                 success = processDisc(carrierData)

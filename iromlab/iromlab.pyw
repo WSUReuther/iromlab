@@ -184,12 +184,12 @@ class carrierEntry(tk.Frame):
             catid = ""
             title = self.title_entry.get().strip()
         volumeNo = self.volumeNo_entry.get().strip()
-        carrierTypeCode = self.v.get()
+        #carrierTypeCode = self.v.get()
 
         # Lookup carrierType for carrierTypeCode value
-        for i in self.carrierTypes:
-            if i[1] == carrierTypeCode:
-                carrierType = i[0]
+        #for i in self.carrierTypes:
+        #    if i[1] == carrierTypeCode:
+        #        carrierType = i[0]
 
         if config.enablePPNLookup:
             # Lookup catalog identifier
@@ -254,7 +254,7 @@ class carrierEntry(tk.Frame):
                 jobCSV = csv.writer(fJob, lineterminator='\n')
 
                 # Row items to list
-                rowItems = ([jobID, catid, title, volumeNo, carrierType])
+                rowItems = ([jobID, catid, title, volumeNo])
 
                 # Write row to job and close file
                 jobCSV.writerow(rowItems)
