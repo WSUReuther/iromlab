@@ -346,6 +346,7 @@ class carrierEntry(tk.Frame):
         self.volumeNo_entry = tk.Entry(self, width=5)
         self.volumeNo_entry.grid(column=1, row=5, sticky='w')
 
+        """
         # Carrier type (radio button select)
         self.v = tk.IntVar()
         self.v.set(1)
@@ -371,6 +372,7 @@ class carrierEntry(tk.Frame):
             self.rb.grid(column=1, row=rowValue, sticky='w')
             rowValue += 1
 
+        """
         self.submit_button = tk.Button(self,
                                        text='Submit',
                                        height=2,

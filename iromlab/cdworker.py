@@ -328,7 +328,7 @@ def processDisc(carrierData):
     rowBatchManifest = ([jobID,
                          carrierData['PPN'],
                          carrierData['volumeNo'],
-                         carrierData['carrierType'],
+                         'carrierTypeDummy',
                          carrierData['title'],
                          volumeID,
                          str(success),
