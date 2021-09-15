@@ -32,7 +32,6 @@ from tkinter import scrolledtext as ScrolledText
 from tkinter import messagebox as tkMessageBox
 from tkinter import ttk
 from . import config
-from .kbapi import sru
 from .socketserver import server
 from . import cdworker
 from . import cdinfo

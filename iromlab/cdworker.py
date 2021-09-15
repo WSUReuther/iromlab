@@ -20,7 +20,6 @@ from . import cdinfo
 from . import isobuster
 from . import dbpoweramp
 from . import verifyaudio
-from . import mdo
 
 def mediumLoaded(driveName):
     """Returns True if medium is loaded (also if blank/unredable), False if not"""
