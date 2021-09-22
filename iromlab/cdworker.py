@@ -320,10 +320,15 @@ def processDisc(carrierData):
         elif carrierInfo["containsData"] and not carrierInfo["cdInteractive"]:
             logging.info("*** Extracting contents ***")
 
-            success, reject = copydisc.extractData(dirDisc)
+            resultCopy = copydisc.extractData(dirDisc)
+            statusCopy = str(resultCopy["status"])
+            if statusCopy != "0":
+                success = False
+                reject = True
+                logging.error("robocopy exited with error(s)")
             
-            if not success or reject:
-                logging.error("Failed to extract contents using shutil")
+            logging.info(''.join(['robocopy command: ', resultCopy['cmdStr']]))
+            logging.info(''.join(['robocopy status: ', str(resultCopy['status'])]))
 
         elif carrierInfo["cdInteractive"]:
             logging.info('*** Extracting data from CD Interactive to raw image file ***')
