@@ -12,9 +12,9 @@ def extractData(writeDirectory, session, dataTrackLSNStart):
     """Extract data to ISO image using specified session number"""
 
     # Temporary name for ISO file; base name
-    isoFileTemp = os.path.join(writeDirectory, "disc.iso")
-    logFile = os.path.join(writeDirectory, "isobuster.log")
-    reportFile = os.path.join(writeDirectory, "isobuster-report.xml")
+    isoFileTemp = os.path.join(writeDirectory, "objects", "disc.iso")
+    logFile = os.path.join(writeDirectory, "metadata", "isobuster.log")
+    reportFile = os.path.join(writeDirectory, "metadata", "isobuster-report.xml")
     
     # Format string that defines DFXML output report
     reportFormatString = config.reportFormatString
@@ -115,7 +115,7 @@ def extractData(writeDirectory, session, dataTrackLSNStart):
         # Rename ISO image using volumeLabel as a base name
         # Any spaces in volumeLabel are replaced with dashes
         try:
-            isoFile = os.path.join(writeDirectory, volumeLabel.replace(' ', '-') + '.iso')
+            isoFile = os.path.join(writeDirectory, "objects", volumeLabel.replace(' ', '-') + '.iso')
             os.rename(isoFileTemp, isoFile)
         except:
             pass
@@ -138,9 +138,9 @@ def extractCdiData(writeDirectory):
     """Extract data from cd Interactive to raw image"""
 
     # Temporary name for image file; base name
-    isoFileTemp = os.path.join(writeDirectory, "disc.bin")
-    logFile = os.path.join(writeDirectory, "isobuster.log")
-    reportFile = os.path.join(writeDirectory, "isobuster-report.xml")
+    isoFileTemp = os.path.join(writeDirectory, "objects", "disc.bin")
+    logFile = os.path.join(writeDirectory, "metadata", "isobuster.log")
+    reportFile = os.path.join(writeDirectory, "metadata", "isobuster-report.xml")
     
     # Format string that defines DFXML output report
     reportFormatString = config.reportFormatString

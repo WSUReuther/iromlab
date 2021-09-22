@@ -4,6 +4,7 @@ from an audio CD using Shntool (WAV) or Flac (FLAC)
 """
 
 import glob
+import os
 from . import config
 from . import shared
 
@@ -89,8 +90,9 @@ def verifyAudioFile(audioFile, audioFormat):
 def verifyCD(directory, audioFormat):
     """ Verify all audio files that are part of a CD"""
 
+    contentsPath = os.path.join(directory, "objects")
     # List of audio files to check
-    filesAudio = glob.glob(directory + "/*." + audioFormat)
+    filesAudio = glob.glob(contentsPath + "/*." + audioFormat)
 
     # List to store error messages/ tool outputs for each file
     errorsList = []
