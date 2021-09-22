@@ -112,7 +112,6 @@ def checksumDirectory(directory):
 
 def processDisc(carrierData):
     """Process one disc / job"""
-    # Note: you left off here
     jobID = carrierData['jobID']
 
     # Initialise reject and success status
